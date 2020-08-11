@@ -47,3 +47,8 @@ a.active,a:hover{
     background-color: white;
     transition: .5s;
 }
+
+h1{
+    text-align: center;
+}
+

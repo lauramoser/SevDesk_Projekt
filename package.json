@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Endabgabe/Server.js"
+    "start": "node Bitcoins/Server.js"
   },
   "repository": {
     "type": "git",

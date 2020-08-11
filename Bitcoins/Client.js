@@ -1,28 +1,13 @@
 "use strict";
 var Bitcoin;
 (function (Bitcoin) {
-    let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "https://blockchain.info/ticker", false);
-    xmlHttp.send(null);
-    console.log(JSON.parse(xmlHttp.response));
-    let waehrung;
-    waehrung = JSON.parse(xmlHttp.response);
-    //let waehrungEinzeln: string = JSON.stringify(waehrung)
-    console.log("waehrung: " + JSON.stringify(waehrung.RUB));
-    for (let i = 0; i < waehrung.length; i++) {
-        let ausgabe = waehrung[i];
-        let chatnach = document.createElement("div"); //ein div erstellt
-        document.getElementById("nachrichtenID")?.appendChild(chatnach); //div in das Ausgabenfeld gesetzt
-        //besser damit arbeiten zu können
-        let text = document.createElement("p"); //p erstellt
-        text.innerHTML = ausgabe; //aus der Augabe hab ich dann ein p (Text) draus gemacht
-        chatnach.appendChild(text); //dieser Text ist dann ein Kind vom div
-    }
-    //Menü leiste
+    //Menü leiste 
+    //Alle anderen divs werden gelöscht um nur die Kategorie anzuzeigen
     document.getElementById("dash")?.addEventListener("click", handlerLoeschen);
     document.getElementById("det")?.addEventListener("click", handlerLoeschen);
     document.getElementById("umr")?.addEventListener("click", handlerLoeschen);
     document.getElementById("dia")?.addEventListener("click", handlerLoeschen);
+    //Startseite 
     document.getElementById("dashboard")?.setAttribute("style", "display : block");
     document.getElementById("umrechner")?.setAttribute("style", "display : none");
     document.getElementById("diagramm")?.setAttribute("style", "display : none");
@@ -55,5 +40,39 @@ var Bitcoin;
             document.getElementById("details")?.setAttribute("style", "display : none");
         }
     }
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "https://blockchain.info/ticker", false);
+    xmlHttp.send();
+    let waehrung;
+    waehrung = JSON.parse(xmlHttp.response);
+    console.log(waehrung.USD.sell); //Zugriff auf einzelne Arrays von Währungen
+    //jedes Element hat ein eigenes Array
+    for (let i = 0; i < waehrung.length; i++) { //waehrung.length undefined
+        let ausgabe = document.createElement("div");
+        document.getElementById("dashboard")?.appendChild(ausgabe);
+        let text = document.createElement("p");
+        text.innerHTML = JSON.stringify(waehrung.USD);
+        ausgabe.appendChild(text);
+    }
 })(Bitcoin || (Bitcoin = {}));
+/*let myObj = JSON.parse(xmlHttp.responseText);
+    console.log(myObj);
+    console.log(myObj.USD);
+    let myDataHTML = "";
+    myDataHTML = "<table><tr><th>Währung</th><th>m15</th><th>last</th><th>buy</th><th>sell</th><th>symbole</th></tr>";
+     
+    for (let i: number = 0; i < myObj.length; i++) {
+        let m15 = myObj[i].m15;
+        let last = myObj[i].last;
+        let buy = myObj[i].buy;
+        let sell = myObj[i].sell;
+        let symbole = myObj[i].symbole;
+
+        myDataHTML = myDataHTML + "<table><tr><th>Währung</th><th> " + m15 + "</th><th>" + last + "</th><th>" + buy + "</th><th>" + sell + "</th><th>symbole</th></tr>";
+    }
+    
+    myDataHTML = myDataHTML + "</table>";
+    document.getElementById("dashboard").innerHTML = myDataHTML;
+    
+    xmlHttp.send();*/ 
 //# sourceMappingURL=Client.js.map
