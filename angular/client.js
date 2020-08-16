@@ -4,7 +4,7 @@ app1.config(function($stateProvider){
     let startState = {
         name: 'start',
         url: '/start',
-        template: '<h1>Ein Bitcoin entspricht</h1>'
+        template: '<h3>Ein Bitcoin entspricht</h3>'
     }
     let detailsState = {
         name: 'details',
@@ -23,7 +23,7 @@ app1.config(function($stateProvider){
     }
 
     $stateProvider.state(startState);
-    $stateProvider.state(detailstState);
+    $stateProvider.state(detailsState);
     $stateProvider.state(rechnerState);
     $stateProvider.state(diagrammState);
 });

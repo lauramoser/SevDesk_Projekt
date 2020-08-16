@@ -41,7 +41,7 @@ var Bitcoin;
         }
     }
     let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "https://blockchain.info/ticker", false);
+    xmlHttp.open("GET", "https://blockchain.info/ticker", false); //JSON mit einbezogen
     xmlHttp.send();
     let waehrung;
     waehrung = JSON.parse(xmlHttp.response);
