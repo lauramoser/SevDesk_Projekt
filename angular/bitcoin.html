@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=”./node_modules/angular-chart/dist/index.js”></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="client.js" defer></script>
+    <link rel="stylesheet" href="style.css">   
+    <title>Bitcoins</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <label class="name">Bitcoins<img src="bitcoin.png" alt="bitcoin"></label>
+        </nav>
+
+        <div ng-app= "navigation">
+            <a ui-sref="start">Startseite</a>
+            <a ui-sref="details">Details</a>
+            <a ui-sref="rechner">Umrechner</a>
+            <a ui-sref="diagramm">Diagramm</a>
+            <ui-view></ui-view>
+        </div>
+        
+    </header>  
+    
+    
+
+
+   
+</body>
+</html>

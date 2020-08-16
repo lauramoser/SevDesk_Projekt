@@ -6,6 +6,8 @@
   "dependencies": {
     "@types/mongodb": "^3.5.25",
     "@types/node": "^14.0.27",
+    "@uirouter/angularjs": "^1.0.28",
+    "angular": "^1.8.0",
     "mongodb": "^3.5.9"
   },
   "devDependencies": {},

@@ -1,5 +1,4 @@
 
-
 namespace Bitcoin {
 
     //Menü leiste 
@@ -48,7 +47,7 @@ namespace Bitcoin {
        }
 
     let xmlHttp: XMLHttpRequest = new XMLHttpRequest();
-    xmlHttp.open("GET", "https://blockchain.info/ticker", false );
+    xmlHttp.open("GET", "https://blockchain.info/ticker", false );          //JSON mit einbezogen
     xmlHttp.send();
 
     export interface Waehrung {
