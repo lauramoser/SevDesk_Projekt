@@ -1,30 +1,14 @@
-let app1 = angular.module('navigation', ['ui.router']);
+var app1 = angular.module('app1',[]);
 
-app1.config(function($stateProvider){
-    let startState = {
-        name: 'start',
-        url: '/start',
-        template: '<h3>Ein Bitcoin entspricht</h3>'
-    }
-    let detailsState = {
-        name: 'details',
-        url: '/details',
-        template: '<h1>Details</h1>'
-    }
-    let rechnerState = {
-        name: 'rechner',
-        url: '/rechner',
-        template: '<h1>Umrechner</h1>'
-    }
-    let diagrammState = {
-        name: 'diagramm',
-        url: '/diagramm',
-        template: '<h1>Diagramm</h1>'
-    }
+app1.controller('ctrl1', function($scope){
+    $scope.first = 1;
+    $scope.second = 1;
 
-    $stateProvider.state(startState);
-    $stateProvider.state(detailsState);
-    $stateProvider.state(rechnerState);
-    $stateProvider.state(diagrammState);
+    $scope.updateValue = function(){
+    $scope.calculation = $scope.first + '+' + $scope.second + 
+        "=" + ($scope.first +$scope.second);
+    };
 });
+
+
 

@@ -1,32 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app1">
+<html ng-app="app1" ng-init= "person = {fName: 'Derek', lName: 'Banas'}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--npm Pakete einbinden-->
-    <script src="./node_modules/angular-chart/dist/index.js"></script>
+    <!--<script src="./node_modules/angular-chart/dist/index.js"></script> ERROR-->
     <!--AngularJS eingebunden-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script> ERROR-->
+
+    <script data-require="angular.js@1.8.x" src="https://code.angularjs.org/1.8.0/angular.js" data-semver="1.8.0"></script>
+    
     <!--UI-Routing eingebunden-->
-    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/angular.js"></script>
+    <!--<script src="lib/angular-ui-router.js"></script>-->
     <!--js Datei die eingebunden werden muss-->
-    <script src="client.js"></script>
+    <script type="text/javascript" src="client.js"></script>
     <link rel="stylesheet" href="style.css">   
     <title>Bitcoins</title>
+    <base href="#/">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <label class="name">Bitcoins<img src="bitcoin.png" alt="bitcoin"></label>
-            <div ng-app= "navigation">
-                <a ui-sref="start"    ui-sref-active= "active">Startseite</a>
-                <a ui-sref="details"  ui-sref-active= "active">Details   </a>
-                <a ui-sref="rechner"  ui-sref-active= "active">Umrechner </a>
-                <a ui-sref="diagramm" ui-sref-active= "active">Diagramm  </a>
-                <ui-view></ui-view>
-            </div>
-        </nav>      
-    </header>    
+  <header>
+        <div class="container">
+            <a class="logo">Bitcoins</a>
+            <nav>
+                <ul>
+                    <li><a ui-sref="start">Startseite</a></li>
+                    <li><a ui-sref="details">Details</a></li>
+                    <li><a ui-sref="rechner">Umrechner</a></li>
+                    <li><a ui-sref="diagramm">Diagramm</a></li>
+                </ul>
+            </nav>  
+            <ui-view></ui-view>
+        </div>    
+    </header>
+
+<div ng-controller="ctrl1">
+    <span>Values:</span>
+    <input type="text" ng-model= first></input>
+    <input type="text" ng-model= second></input>
+
+    <button ng-click="updateValue()">Sum</button>
+    <br><br>
+
+    {{calculation}}
+</div>
+
+  
+   
+
+
 </body>
 </html>
+
+ 

@@ -1,24 +1,37 @@
-body{
-    background-color: rgb(241, 238, 234);
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 18px;
 }
 
-nav{
-    background-color: rgb(143, 24, 24);
-    height: 80px;
-    width: 100%
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-label.name{
+header {
+    background: rgb(143, 24, 24);
+    padding: 1em 0;
+}
+header a {
     color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 50px;
+    text-decoration: none;
+}
+a.logo {
     font-weight: bold;
 }
-label.name{
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 50px;
-    font-weight: bold;
+
+nav {
+    float: right;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+}
+nav ul li a {
+    padding: 1em;
+}
+nav a:hover {
+    background-color:  rgb(109, 17, 17);
 }
